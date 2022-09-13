@@ -30,7 +30,7 @@ const Create = () => {
   return (
     <div className='row'>
       <div className='col s8 offset-2'>
-        <div class="input-field col s12">
+        <div className="input-field col s12">
           <input
             id="link"
             name='link'

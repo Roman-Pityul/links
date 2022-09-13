@@ -54,38 +54,39 @@ const FormRegister = () => {
       }) => (
         <div className={styles.root}>
           <h2>Регистрация</h2>
-          <div class="input-field col s12">
+          <div className="input-field col s12">
             <input
               id="email"
               type="email"
-              class="validate"
+              className="validate"
               name='email'
               onChange={handleChange}
               onBlur={handleBlur}
               value={values.email}
             />
-            <label for="email">Email</label>
+            <label htmlFor="email">Email</label>
           </div>
 
           {touched.email && errors.email && (<p style={{ color: "red", marginTop: "0px", fontWeight: "bold" }}>{errors.email}</p>)}
 
-          <div class="input-field col s12">
+          <div className="input-field col s12">
             <input
               id="password"
               type="password"
-              class="validate"
+              className="validate"
               name='password'
+              onKeyDown={(e) => { if (e.key = 'Enter') { handleSubmit() } }}
               onChange={handleChange}
               onBlur={handleBlur}
               value={values.password}
             />
-            <label for="password">Password</label>
+            <label htmlFor="password">Password</label>
           </div>
 
           {touched.password && errors.password && (<p style={{ color: "red", marginTop: "0px", fontWeight: "bold" }}>{errors.password}</p>)}
 
-          <button onClick={handleSubmit} type="button" class="waves-effect waves-light btn blue accent-2">зарегистрировать</button>
-          <Link to='/'><button class="waves-effect waves-teal btn-flat">Войти</button></Link>
+          <button onClick={handleSubmit} type="button" className="waves-effect waves-light btn blue accent-2">зарегистрировать</button>
+          <Link to='/'><button className="waves-effect waves-teal btn-flat">Войти</button></Link>
         </div>
       )}
     </Formik>
